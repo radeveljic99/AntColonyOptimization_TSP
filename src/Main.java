@@ -278,7 +278,6 @@ public class Main {
         stampajNiz(najboljiPut);
         System.out.println();
         double duzinaNajkracegPuta = duzinaPuta(najboljiPut, graf);
-        System.out.println("best length = " + duzinaNajkracegPuta);
 
         double[][] feromoni = inicijalizujFeromone(brojGradova);
 
@@ -291,16 +290,13 @@ public class Main {
             if (duzinaTrenNajboljegPuta < duzinaNajkracegPuta) {
                 duzinaNajkracegPuta = duzinaTrenNajboljegPuta;
                 najboljiPut = trenNajboljiPut;
-                System.out.println("Nova najbolja staza");
-                stampajNiz(najboljiPut);
-                System.out.println("Nova najbolja duzina puta : " + duzinaNajkracegPuta);
             }
             vrijeme++;
         }
+        System.out.println("Duzina najkraceg puta" +
+                " = " + duzinaNajkracegPuta);
         System.out.println("Feromoni");
         stampajFeromone(feromoni);
-
-        System.out.println("KRAJ");
 
     }
 
